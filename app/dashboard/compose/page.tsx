@@ -1,5 +1,10 @@
-"use client";
-import { ComposeEmail } from "@/components/ComposeEmail";
-export default function ComposePage() {
-  return <ComposeEmail />;
+import { Suspense } from "react";
+import ComposeClient from "./ComposeClient";
+
+export default function Page() {
+  return (
+    <Suspense fallback={<div className="p-8">Loading compose…</div>}>
+      <ComposeClient />
+    </Suspense>
+  );
 }
