@@ -109,7 +109,7 @@ export function EmailList({
         {filteredEmails.map((email) => {
           const isOpen = openId === email.id;
           const date =
-            type === "sent" ? email.sentAt : email.scheduledAt;
+  email.sentAt ?? email.scheduledAt;
 
           const timeTag = date
             ? new Date(date).toLocaleString()
@@ -231,3 +231,4 @@ export function EmailList({
     </div>
   );
 }
+
